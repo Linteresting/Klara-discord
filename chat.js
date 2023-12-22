@@ -15,10 +15,10 @@ export async function chat(prompt) {
   }
 
   try {
-    console.log(prompt)
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    return response.text(); // 或者 response.json()，取决于响应格式
+    console.log('ai --- prompt:' + prompt + ' res: ' + response.text());
+    return response.text();
   } catch (error) {
     console.error("Error in chat function:", error);
     return "获取res错误";

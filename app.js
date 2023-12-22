@@ -63,7 +63,7 @@ app.post("/interactions", async function (req, res) {
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           // Fetches a random emoji to send from a helper function
-          content: chat(req.body.data.options[0].value),
+          content: await chat(req.body.data.options[0].value),
         },
       })
     }
