@@ -1,10 +1,10 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from '@fuyun/generative-ai'
 
 let model = null;
 
 function initModel() {
   if (!model) {
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY, process.env.GOOGLE_API_URL);
     model = genAI.getGenerativeModel({ model: "gemini-pro"});
   }
 }
